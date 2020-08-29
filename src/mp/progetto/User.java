@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class User {
 
-	private int id;
+	private String id;
 	private String name;
 	private int age;
 	private ArrayList<String> games;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -38,12 +38,12 @@ public class User {
 
 	public static class UserBuilder {
 
-		private int id;
+		private String id;
 		private String name;
 		private int age;
 		private ArrayList<String> games;
 
-		public UserBuilder(int id, String name) {
+		public UserBuilder(String id, String name) {
 			this.id = id;
 			this.name = name;
 		}

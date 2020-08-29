@@ -9,25 +9,24 @@ import org.junit.Test;
 
 public class UserTest {
 
-    @Test
-    public void testValuesAreAssigned() {
-        // setup
-        User primoUtente = new User.UserBuilder(1,"John").withAge(20).build();
-        // verify
-        assertThat(primoUtente.getId()).isEqualTo(1);
-        assertThat(primoUtente.getName()).isEqualTo("John");
-        assertThat(primoUtente.getAge()).isEqualTo(20);
-    }
-    
-    @Test
-    public void testAddGames() {
-        // setup
-        ArrayList<String> list=new ArrayList<>(Arrays.asList("Game1", "Game2"));
-        User primoUtente = new User.UserBuilder(1,"John").setGames(list).build();
-        primoUtente.addGame("Game3");
-        // verify
-        assertThat(primoUtente.getGames()).containsExactlyInAnyOrder("Game1", "Game2", "Game3");
-    }
+	@Test
+	public void testValuesAreAssigned() {
+		// setup
+		User primoUtente = new User.UserBuilder("john88", "John Wick").withAge(20).build();
+		// verify
+		assertThat(primoUtente.getId()).isEqualTo("john88");
+		assertThat(primoUtente.getName()).isEqualTo("John Wick");
+		assertThat(primoUtente.getAge()).isEqualTo(20);
+	}
+
+	@Test
+	public void testAddGames() {
+		// setup
+		ArrayList<String> list = new ArrayList<>(Arrays.asList("Game1", "Game2"));
+		User primoUtente = new User.UserBuilder("john88", "John").setGames(list).build();
+		primoUtente.addGame("Game3");
+		// verify
+		assertThat(primoUtente.getGames()).containsExactlyInAnyOrder("Game1", "Game2", "Game3");
+	}
 
 }
-
