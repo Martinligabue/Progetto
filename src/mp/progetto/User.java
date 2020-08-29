@@ -1,67 +1,62 @@
 package mp.progetto;
 
 public class User {
-	private int id; // richiesto
-	private String name; // richiesto
-	private Integer age; // opzionale con validazione
-	private String address; // opzionale senza validazione
-	// diventerà la lista di giochi, se possibile con un singleton
 
-	private void setId(int id) {
-		this.id = id;
-	}
+	private int id;
+	private String name;
+	private boolean isGraphicsCardEnabled;
+	private boolean isBluetoothEnabled;
 
-	private void setName(String name) {
-		this.name = name;
+	public int getId() {
+		return id;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	private void setAge(Integer age) {
-		this.age = age;
+	public boolean isGraphicsCardEnabled() {
+		return isGraphicsCardEnabled;
 	}
 
-	private void setAddress(String address) {
-		this.address = address;
+	public boolean isBluetoothEnabled() {
+		return isBluetoothEnabled;
 	}
 
-	public User() {
-		super();
+	private User(UserBuilder builder) {
+		this.id = builder.id;
+		this.name = builder.name;
+		this.isGraphicsCardEnabled = builder.isGraphicsCardEnabled;
+		this.isBluetoothEnabled = builder.isBluetoothEnabled;
 	}
 
-	public class UserBuilder {
+	// Builder Class
+	public static class UserBuilder {
+
 		private int id;
 		private String name;
-		private Integer age;
-		private String address;
+		private boolean isGraphicsCardEnabled;
+		private boolean isBluetoothEnabled;
 
 		public UserBuilder(int id, String name) {
 			this.id = id;
 			this.name = name;
 		}
 
-		public UserBuilder withAge(Integer age) {
-			if (age < 13) // COPPA law
-				throw new IllegalArgumentException("age must be at least 13: " + age);
-			this.age = age;
+		public UserBuilder setGraphicsCardEnabled(boolean isGraphicsCardEnabled) {
+			this.isGraphicsCardEnabled = isGraphicsCardEnabled;
 			return this;
 		}
 
-		public UserBuilder withAddress(String address) {
-			this.address = address;
+		public UserBuilder setBluetoothEnabled(boolean isBluetoothEnabled) {
+			this.isBluetoothEnabled = isBluetoothEnabled;
 			return this;
 		}
 
 		public User build() {
-			User person = new User();
-			person.setId(id);
-			person.setName(name);
-			person.setAge(age);
-			person.setAddress(address);
-			return person;
+			return new User(this);
 		}
 
 	}
+
 }
