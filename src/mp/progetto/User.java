@@ -21,8 +21,12 @@ public class User {
 		return age;
 	}
 
-	public ArrayList<String> isBluetoothEnabled() {
+	public ArrayList<String> getGames() {
 		return games;
+	}
+	
+	public void addGame(String game) {
+		games.add(game);
 	}
 
 	private User(UserBuilder builder) {
@@ -49,7 +53,7 @@ public class User {
 			return this;
 		}
 
-		public UserBuilder setBluetoothEnabled(ArrayList<String> games) {
+		public UserBuilder setGames(ArrayList<String> games) {
 			this.games = games;
 			return this;
 		}
