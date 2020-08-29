@@ -1,11 +1,13 @@
 package mp.progetto;
 
+import java.util.ArrayList;
+
 public class User {
 
 	private int id;
 	private String name;
 	private int age;
-	private boolean isBluetoothEnabled;
+	private ArrayList<String> games;
 
 	public int getId() {
 		return id;
@@ -19,24 +21,23 @@ public class User {
 		return age;
 	}
 
-	public boolean isBluetoothEnabled() {
-		return isBluetoothEnabled;
+	public ArrayList<String> isBluetoothEnabled() {
+		return games;
 	}
 
 	private User(UserBuilder builder) {
 		this.id = builder.id;
 		this.name = builder.name;
 		this.age = builder.age;
-		this.isBluetoothEnabled = builder.isBluetoothEnabled;
+		this.games = builder.games;
 	}
 
-	// Builder Class
 	public static class UserBuilder {
 
 		private int id;
 		private String name;
 		private int age;
-		private boolean isBluetoothEnabled;
+		private ArrayList<String> games;
 
 		public UserBuilder(int id, String name) {
 			this.id = id;
@@ -48,8 +49,8 @@ public class User {
 			return this;
 		}
 
-		public UserBuilder setBluetoothEnabled(boolean isBluetoothEnabled) {
-			this.isBluetoothEnabled = isBluetoothEnabled;
+		public UserBuilder setBluetoothEnabled(ArrayList<String> games) {
+			this.games = games;
 			return this;
 		}
 
