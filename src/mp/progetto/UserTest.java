@@ -29,4 +29,14 @@ public class UserTest {
 		assertThat(primoUtente.getGames()).containsExactlyInAnyOrder("Game1", "Game2", "Game3");
 	}
 
+	@Test
+	public void testAddFakeGames() {
+		User primoUtente = new User.UserBuilder("john88", "John").build();
+		assertThatExceptionOfType(IllegalArgumentException.class)
+			.isThrownBy(() -> primoUtente.addGame("Game5"));
+		ArrayList<String> list = new ArrayList<>(Arrays.asList("Game1", "Game5"));
+		assertThatExceptionOfType(IllegalArgumentException.class)
+			.isThrownBy(() -> new User.UserBuilder("frank32","Franceso").setGames(list).build());
+	}
+
 }

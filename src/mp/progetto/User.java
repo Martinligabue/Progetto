@@ -9,7 +9,7 @@ public class User {
 	private int age;
 	private ArrayList<String> games;
 
-	public String getId() {
+	public String getId() {// must be different
 		return id;
 	}
 
@@ -24,9 +24,12 @@ public class User {
 	public ArrayList<String> getGames() {
 		return games;
 	}
-	
+
 	public void addGame(String game) {
-		games.add(game);
+		if (Shop.getGameList().contains(game))
+			games.add(game);
+		else
+			throw new IllegalArgumentException("game does not exist: " + game);
 	}
 
 	private User(UserBuilder builder) {
@@ -54,8 +57,13 @@ public class User {
 		}
 
 		public UserBuilder setGames(ArrayList<String> games) {
+			if (!Shop.getGameList().containsAll(games)) {
+				throw new IllegalArgumentException("game does not exist");
+			}
 			this.games = games;
+
 			return this;
+
 		}
 
 		public User build() {
