@@ -4,7 +4,7 @@ public class User {
 
 	private int id;
 	private String name;
-	private boolean isGraphicsCardEnabled;
+	private int age;
 	private boolean isBluetoothEnabled;
 
 	public int getId() {
@@ -15,8 +15,8 @@ public class User {
 		return name;
 	}
 
-	public boolean isGraphicsCardEnabled() {
-		return isGraphicsCardEnabled;
+	public int getAge() {
+		return age;
 	}
 
 	public boolean isBluetoothEnabled() {
@@ -26,7 +26,7 @@ public class User {
 	private User(UserBuilder builder) {
 		this.id = builder.id;
 		this.name = builder.name;
-		this.isGraphicsCardEnabled = builder.isGraphicsCardEnabled;
+		this.age = builder.age;
 		this.isBluetoothEnabled = builder.isBluetoothEnabled;
 	}
 
@@ -35,7 +35,7 @@ public class User {
 
 		private int id;
 		private String name;
-		private boolean isGraphicsCardEnabled;
+		private int age;
 		private boolean isBluetoothEnabled;
 
 		public UserBuilder(int id, String name) {
@@ -43,8 +43,8 @@ public class User {
 			this.name = name;
 		}
 
-		public UserBuilder setGraphicsCardEnabled(boolean isGraphicsCardEnabled) {
-			this.isGraphicsCardEnabled = isGraphicsCardEnabled;
+		public UserBuilder withAge(int age) {
+			this.age = age;
 			return this;
 		}
 
