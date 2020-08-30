@@ -17,6 +17,8 @@ public class Shop {// manage games and users, manages also usernames/ids univoci
 		return prices;
 	}
 
+////////////
+
 	private DiscountStrategy discountStrategy;
 
 	public Shop(DiscountStrategy discountStrategy) {
