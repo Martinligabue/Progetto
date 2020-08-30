@@ -29,7 +29,7 @@ public class Shop {// manage games and users, manages also usernames/ids univoci
 		this.discountStrategy = discountStrategy;
 	}
 
-	public int getTotal(int originalPrice) {
+	public double getTotal(double originalPrice) {
 		return discountStrategy.applyDiscount(originalPrice);
 	}
 

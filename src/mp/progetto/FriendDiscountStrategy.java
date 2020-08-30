@@ -1,6 +1,6 @@
 package mp.progetto;
 
-public class NoDiscountStrategy implements DiscountStrategy {
+public class FriendDiscountStrategy implements DiscountStrategy {
 	@Override
 	public double applyDiscount(double originalPrice) {
 		return originalPrice;
