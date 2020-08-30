@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.junit.Before;
 import org.junit.Test;
 
 public class UserTest {
@@ -39,13 +38,4 @@ public class UserTest {
 				.isThrownBy(() -> new User.UserBuilder("frank32", "Franceso").setGames(list).build());
 	}
 
-	@Test
-	public void discount() {
-		private Discount shop;
-		 @Before
-		 public void setup() {
-		 shop = new Shop(DiscountStrategyFactory.noDiscount());
-		 }
-
-	}
 }

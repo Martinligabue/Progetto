@@ -1,23 +1,36 @@
 package mp.progetto;
 
 public class Discount {// strategy
-	public static DiscountStrategy plain() {
-		return price -> price;
-
+	public class NoDiscountStrategy implements DiscountStrategy {
+		@Override
+		public int applyDiscount(int originalPrice) {
+			return originalPrice;
+		}
 	}
 
-	public static DiscountStrategy friends(int friends) {
-		return price -> price * (1 / friends);
+	public class AbsoluteDiscountStrategy implements DiscountStrategy {
+		private int discount;
 
+		public AbsoluteDiscountStrategy(int discount) {
+			this.discount = discount;
+		}
+
+		@Override
+		public int applyDiscount(int originalPrice) {
+			return originalPrice - discount;
+		}
 	}
 
-	public static DiscountStrategy coupon(double discount) {
-		return price -> price - discount;
+	public class PercentageDiscountStrategy implements DiscountStrategy {
+		private int percentage;
 
-	}
+		public PercentageDiscountStrategy(int percentage) {
+			this.percentage = percentage;
+		}
 
-	public static DiscountStrategy summerSale() {
-		return price -> price * 0.8;
-
+		@Override
+		public int applyDiscount(int originalPrice) {
+			return originalPrice - (originalPrice * percentage / 100);
+		}
 	}
 }
