@@ -4,33 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.*;
 
-public class ShopTest {/*
-	private Shop shop;
-
-	@Before
-	public void setup() {
-		shop = new Shop(new NoDiscountStrategy());	
-	}
-
-	@Test
-	public void testDefaultStrategy() {
-		assertEquals(10, shop.getTotal(10));
-	}
-
-	@Test
-	public void testAbsoluteDiscountStrategy() {
-		shop.setDiscountStrategy(new AbsoluteDiscountStrategy(3));
-		assertEquals(7, shop.getTotal(10));
-	}
-
-	@Test
-	public void testPercentageDiscountStrategy() {
-		shop.setDiscountStrategy(new PercentageDiscountStrategy(15));
-		assertEquals(85, shop.getTotal(100));
-	}
-	*/
-	
-	
+public class ShopTest {
 	private Shop shop;
 
 	@Before
@@ -52,7 +26,12 @@ public class ShopTest {/*
 	@Test
 	public void testPercentageDiscountStrategy() {
 		shop.setDiscountStrategy(DiscountStrategyFactory.summerSale());
-		assertEquals(85, shop.getTotal(100), 0);
+		assertEquals(80, shop.getTotal(100), 0);
 	}
 
+	@Test
+	public void testFriendDiscountStrategy() {
+		shop.setDiscountStrategy(DiscountStrategyFactory.friendDiscount(3));
+		assertEquals(70, shop.getTotal(100), 0);
+	}
 }

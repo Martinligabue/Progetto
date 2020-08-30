@@ -12,4 +12,8 @@ public class DiscountStrategyFactory {
 	public static DiscountStrategy summerSale() {
 		return originalPrice -> originalPrice * 0.8;
 	}
+
+	public static DiscountStrategy friendDiscount(int friends) {
+		return originalPrice -> originalPrice - (originalPrice * 0.1 * friends);
+	}
 }
