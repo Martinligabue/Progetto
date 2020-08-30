@@ -2,29 +2,14 @@ package mp.progetto;
 
 public class DiscountStrategyFactory {
 	public static DiscountStrategy noDiscount() {
-		return new DiscountStrategy() {
-			@Override
-			public int applyDiscount(int originalPrice) {
-				return originalPrice;
-			}
-		};
+		return originalPrice -> originalPrice;
 	}
 
 	public static DiscountStrategy absoluteDiscount(int discount) {
-		return new DiscountStrategy() {
-			@Override
-			public int applyDiscount(int originalPrice) {
-				return originalPrice - discount;
-			}
-		};
+		return originalPrice -> originalPrice - discount;
 	}
 
 	public static DiscountStrategy percentageDiscount(int percentage) {
-		return new DiscountStrategy() {
-			@Override
-			public int applyDiscount(int originalPrice) {
-				return originalPrice - (originalPrice * percentage / 100);
-			}
-		};
+		return originalPrice -> originalPrice - (originalPrice * percentage / 100);
 	}
 }
