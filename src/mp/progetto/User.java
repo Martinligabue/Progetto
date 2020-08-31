@@ -26,7 +26,7 @@ public class User {
 	}
 
 	public void addGame(String game) {
-		if (Shop.getGameList().contains(game))
+		if (Shop.
 			games.add(game);
 		else
 			throw new IllegalArgumentException("game does not exist: " + game);
