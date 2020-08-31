@@ -10,21 +10,21 @@ public class Shop {// todo:add the default prices as default, also map?
 		gameList.add(new Game(name, d));
 	}
 
-	public void addDefaultGames(Shop shop) {
-		shop.addGame("Klondike", 0);
-		shop.addGame("Spider", 10);
-		shop.addGame("Freecell", 50);
-		shop.addGame("Tripeaks", 15.5);
+	public void addDefaultGames(Shop shopGames) {
+		shopGames.addGame("Klondike", 0);
+		shopGames.addGame("Spider", 10);
+		shopGames.addGame("Freecell", 50);
+		shopGames.addGame("Tripeaks", 15.5);
 	}
 
 	public final static ArrayList<Game> getGameList() {
 		return gameList;
 	}
-
+/*
 	public boolean containsName(final ArrayList<Game> list, final String gameName) {
 		return list.stream().filter(o -> o.getName().equals(gameName)).findFirst().isPresent();
 	}
-
+*/
 ////////////
 
 	private DiscountStrategy discountStrategy;

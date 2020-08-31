@@ -25,23 +25,28 @@ public class User {
 		return games;
 	}
 
-	public void addGame(String game) {
-		
-		if (containsName(games, game))
-			games.addGame(game);
-		else
+	public void addGame(String game, ArrayList<Game> shopGames) {
+
+		if (containsName(shopGames, game)) {
+			Game e = new Game(game, priceOfGame(shopGames, game));
+			games.add(e);
+		} else
 			throw new IllegalArgumentException("game does not exist: " + game);
 	}
 
 	public boolean containsName(final ArrayList<Game> list, final String gameName) {
-		return list.stream().filter(o -> o.getName().equals(gameName)).findFirst().isPresent();
+		return list.stream().filter(o -> o.getName().equals(gameName)).findAny().isPresent();
+	}
+
+	public double priceOfGame(final ArrayList<Game> list, final String gameName) {
+		return list.stream().filter(o -> o.getName().equals(gameName)).findAny().get().price;
 	}
 
 	private User(UserBuilder builder) {
 		this.id = builder.id;
 		this.name = builder.name;
 		this.age = builder.age;
-		// this.games = builder.games;
+		this.games = builder.games;
 	}
 
 	public static class UserBuilder {
@@ -49,7 +54,7 @@ public class User {
 		private String id;
 		private String name;
 		private int age;
-		private ArrayList<String> games;
+		private ArrayList<Game> games;
 
 		public UserBuilder(String id, String name) {
 			this.id = id;
@@ -61,11 +66,25 @@ public class User {
 			return this;
 		}
 
-		public UserBuilder setGames(ArrayList<String> games) {
-			if (!Shop.getGameList().containsAll(games)) {
-				throw new IllegalArgumentException("game does not exist");
-			}
+		public UserBuilder setGames(ArrayList<Game> games) {
+			/*
+			 * if (!Shop.getGameList().containsAll(games)) { throw new
+			 * IllegalArgumentException("game does not exist"); }
+			 */
 			this.games = games;
+
+			return this;
+
+		}
+
+		public UserBuilder setGames(Game game) {
+			/*
+			 * if (!Shop.getGameList().containsAll(games)) { throw new
+			 * IllegalArgumentException("game does not exist"); }
+			 */
+			ArrayList<Game> list = new ArrayList<>();
+			list.add(game);
+			this.games = list;
 
 			return this;
 
