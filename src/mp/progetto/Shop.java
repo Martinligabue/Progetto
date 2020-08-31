@@ -21,6 +21,10 @@ public class Shop {// todo:add the default prices as default, also map?
 		return gameList;
 	}
 
+	public boolean containsName(final ArrayList<Game> list, final String gameName) {
+		return list.stream().filter(o -> o.getName().equals(gameName)).findFirst().isPresent();
+	}
+
 ////////////
 
 	private DiscountStrategy discountStrategy;

@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class UserTest {
-	private Shop shop;
+	private static Shop shop;
 
 	@Before
 	public void setup() {
@@ -34,7 +34,7 @@ public class UserTest {
 		User primoUtente = new User.UserBuilder("john88", "John").setGames(list).build();
 		primoUtente.addGame("Game3");
 		// verify
-		assertThat(primoUtente.getGames()).containsExactlyInAnyOrder("Game1", "Game2", "Game3");
+		assertThat(primoUtente.getGames().containsName());
 	}
 
 	@Test

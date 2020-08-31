@@ -27,17 +27,21 @@ public class User {
 
 	public void addGame(String game) {
 		
-		if (game.)
-			games.add(game);
+		if (containsName(games, game))
+			games.addGame(game);
 		else
 			throw new IllegalArgumentException("game does not exist: " + game);
+	}
+
+	public boolean containsName(final ArrayList<Game> list, final String gameName) {
+		return list.stream().filter(o -> o.getName().equals(gameName)).findFirst().isPresent();
 	}
 
 	private User(UserBuilder builder) {
 		this.id = builder.id;
 		this.name = builder.name;
 		this.age = builder.age;
-		//this.games = builder.games;
+		// this.games = builder.games;
 	}
 
 	public static class UserBuilder {
