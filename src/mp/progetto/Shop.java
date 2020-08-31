@@ -10,6 +10,13 @@ public class Shop {// todo:add the default prices as default, also map?
 		gameList.add(new Game(name, d));
 	}
 
+	public void addDefaultGames(Shop shop) {
+		shop.addGame("Klondike", 0);
+		shop.addGame("Spider", 10);
+		shop.addGame("Freecell", 50);
+		shop.addGame("Tripeaks", 15.5);
+	}
+
 	public final static ArrayList<Game> getGameList() {
 		return gameList;
 	}
@@ -17,6 +24,9 @@ public class Shop {// todo:add the default prices as default, also map?
 ////////////
 
 	private DiscountStrategy discountStrategy;
+
+	public Shop() {
+	}
 
 	public Shop(DiscountStrategy discountStrategy) {
 		this.discountStrategy = discountStrategy;

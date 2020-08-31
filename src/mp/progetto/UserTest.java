@@ -5,9 +5,17 @@ import static org.assertj.core.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class UserTest {
+	private Shop shop;
+
+	@Before
+	public void setup() {
+		shop = new Shop();
+		shop.addDefaultGames(shop);
+	}
 
 	@Test
 	public void testValuesAreAssigned() {

@@ -7,7 +7,7 @@ public class User {
 	private String id;
 	private String name;
 	private int age;
-	private ArrayList<String> games;
+	private ArrayList<Game> games;
 
 	public String getId() {// must be different
 		return id;
@@ -21,12 +21,13 @@ public class User {
 		return age;
 	}
 
-	public ArrayList<String> getGames() {
+	public ArrayList<Game> getGames() {
 		return games;
 	}
 
 	public void addGame(String game) {
-		if (Shop.
+		
+		if (game.)
 			games.add(game);
 		else
 			throw new IllegalArgumentException("game does not exist: " + game);
@@ -36,7 +37,7 @@ public class User {
 		this.id = builder.id;
 		this.name = builder.name;
 		this.age = builder.age;
-		this.games = builder.games;
+		//this.games = builder.games;
 	}
 
 	public static class UserBuilder {

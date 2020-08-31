@@ -10,10 +10,7 @@ public class ShopTest {
 	@Before
 	public void setup() {
 		shop = new Shop(DiscountStrategyFactory.noDiscount());
-		shop.addGame("Klondike", 0);
-		shop.addGame("Klondike", 10);
-		shop.addGame("Klondike", 50);
-		shop.addGame("Klondike", 15.5);
+		shop.addDefaultGames(shop);
 	}
 
 	@Test
