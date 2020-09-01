@@ -16,6 +16,5 @@ public class Game {
 		this.name = name;
 		this.price = price;
 	}
-//add game, e l'altroper trovare nomi
-	
+
 }

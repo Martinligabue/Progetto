@@ -19,7 +19,8 @@ public class UserTest {
 	public void testValuesAreAssigned() {
 		Game game1 = new Game("Spider", 0);
 		// setup
-		User primoUtente = new User.UserBuilder("john88", "John Wick").withAge(20).setGames(game1).build();
+		User primoUtente = new User.UserBuilder("john88", "John Wick").withAge(20).setGames(game1, Shop.getGameList())
+				.build();
 		// verify
 		assertThat(primoUtente.getId()).isEqualTo("john88");
 		assertThat(primoUtente.getName()).isEqualTo("John Wick");
@@ -32,8 +33,8 @@ public class UserTest {
 		// setup
 		ArrayList<Game> list = new ArrayList<Game>();
 		list.add(new Game("Klondike", 0.0));
-		list.add(new Game("Spider", 0.0));
-		User primoUtente = new User.UserBuilder("john88", "John").setGames(list).build();
+		list.add(new Game("Spider", 10.0));
+		User primoUtente = new User.UserBuilder("john88", "John").setGames(list, Shop.getGameList()).build();
 
 		primoUtente.addGame("Freecell", Shop.getGameList());
 		// verify
@@ -48,7 +49,7 @@ public class UserTest {
 		ArrayList<Game> list = new ArrayList<Game>();
 		list.add(new Game("Klondike", 0.0));
 		list.add(new Game("Spider", 0.0));
-		User primoUtente = new User.UserBuilder("john88", "John").setGames(list).build();
+		User primoUtente = new User.UserBuilder("john88", "John").setGames(list, Shop.getGameList()).build();
 		// verify
 		assertThatExceptionOfType(IllegalArgumentException.class)
 				.isThrownBy(() -> primoUtente.addGame("Pyramid", Shop.getGameList()));

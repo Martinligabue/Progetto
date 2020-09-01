@@ -54,7 +54,7 @@ public class User {
 		private String id;
 		private String name;
 		private int age;
-		private ArrayList<Game> games;
+		private ArrayList<Game> games=new ArrayList<Game>();
 
 		public UserBuilder(String id, String name) {
 			this.id = id;
@@ -66,27 +66,27 @@ public class User {
 			return this;
 		}
 
-		public UserBuilder setGames(ArrayList<Game> games) {
-			/*
-			 * if (!Shop.getGameList().containsAll(games)) { throw new
-			 * IllegalArgumentException("game does not exist"); }
-			 */
+		public UserBuilder setGames(ArrayList<Game> games, ArrayList<Game> shopGames) {
+			/*Game var = null;
+			while (games.iterator().hasNext())
+				var=games.iterator().next();
+				if (!containsName(shopGames, var.name))
+					throw new IllegalArgumentException("game does not exist");
+*/
 			this.games = games;
 
 			return this;
 
 		}
 
-		public UserBuilder setGames(Game game) {
-			/*
-			 * if (!Shop.getGameList().containsAll(games)) { throw new
-			 * IllegalArgumentException("game does not exist"); }
-			 */
-			ArrayList<Game> list = new ArrayList<>();
-			list.add(game);
-			this.games = list;
+		public UserBuilder setGames(Game game, ArrayList<Game> shopGames) {
+			if (!containsName(shopGames, game.name)) {
+				throw new IllegalArgumentException("game does not exist: " + game);
 
-			return this;
+			} else {
+				games.add(game);
+				return this;
+			}
 
 		}
 
@@ -94,6 +94,13 @@ public class User {
 			return new User(this);
 		}
 
+		public boolean containsName(final ArrayList<Game> list, final String gameName) {
+			return list.stream().filter(o -> o.getName().equals(gameName)).findAny().isPresent();
+		}
+
+		public double priceOfGame(final ArrayList<Game> list, final String gameName) {
+			return list.stream().filter(o -> o.getName().equals(gameName)).findAny().get().price;
+		}
 	}
 
 }

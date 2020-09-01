@@ -9,7 +9,7 @@ public class ShopTest {
 
 	@Before
 	public void setup() {
-		shop = new Shop(DiscountStrategyFactory.noDiscount());
+		shop = new Shop(DiscountStrategyFactoryLambda.noDiscount());
 		shop.addDefaultGames(shop);
 	}
 
@@ -20,19 +20,19 @@ public class ShopTest {
 
 	@Test
 	public void testAbsoluteDiscountStrategy() {
-		shop.setDiscountStrategy(DiscountStrategyFactory.coupon(3));
+		shop.setDiscountStrategy(DiscountStrategyFactoryLambda.coupon(3));
 		assertEquals(7, shop.getTotal(10), 0);
 	}
 
 	@Test
 	public void testPercentageDiscountStrategy() {
-		shop.setDiscountStrategy(DiscountStrategyFactory.summerSale());
+		shop.setDiscountStrategy(DiscountStrategyFactoryLambda.summerSale());
 		assertEquals(80, shop.getTotal(100), 0);
 	}
 
 	@Test
 	public void testFriendDiscountStrategy() {
-		shop.setDiscountStrategy(DiscountStrategyFactory.friendDiscount(3));
+		shop.setDiscountStrategy(DiscountStrategyFactoryLambda.friendDiscount(3));
 		assertEquals(70, shop.getTotal(100), 0);
 	}
 }

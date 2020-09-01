@@ -1,6 +1,6 @@
 package mp.progetto;
 
-public class DiscountStrategyFactory {
+public class DiscountStrategyFactoryLambda {
 	public static DiscountStrategy noDiscount() {
 		return originalPrice -> originalPrice;
 	}
