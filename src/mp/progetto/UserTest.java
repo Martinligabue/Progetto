@@ -18,7 +18,6 @@ public class UserTest extends Streams {
 	@Test
 	public void testValuesAreAssigned() {
 		Game game1 = new Game("Spider", priceOfGame(Shop.getGameList(), "Spider"));
-		// setup
 		User primoUtente = new User.UserBuilder("john88", "John Wick").withAge(20).setGames(game1, Shop.getGameList())
 				.build();
 		// verify

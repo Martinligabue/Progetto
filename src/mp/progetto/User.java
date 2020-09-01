@@ -7,6 +7,7 @@ public class User extends Streams {
 	private String id;
 	private String name;
 	private int age;
+	private int friends;
 	private ArrayList<Game> games;
 
 	public String getId() {// must be different
@@ -20,9 +21,16 @@ public class User extends Streams {
 	public int getAge() {
 		return age;
 	}
+	
+	public int getFriends() {
+		return friends;
+	}
 
 	public ArrayList<Game> getGames() {
 		return games;
+	}
+	public Game getExactGame(String gameName) {
+		return games.stream().filter(o->o.name==gameName).findAny().get();
 	}
 
 	public void addGame(String game, ArrayList<Game> shopGames) {
@@ -38,6 +46,7 @@ public class User extends Streams {
 		this.id = builder.id;
 		this.name = builder.name;
 		this.age = builder.age;
+		this.friends = builder.friends;
 		this.games = builder.games;
 	}
 
@@ -46,6 +55,7 @@ public class User extends Streams {
 		private String id;
 		private String name;
 		private int age;
+		private int friends;
 		private ArrayList<Game> games=new ArrayList<Game>();
 
 		public UserBuilder(String id, String name) {
@@ -55,6 +65,11 @@ public class User extends Streams {
 
 		public UserBuilder withAge(int age) {
 			this.age = age;
+			return this;
+		}
+		
+		public UserBuilder withFriends(int friends) {
+			this.friends = friends;
 			return this;
 		}
 
