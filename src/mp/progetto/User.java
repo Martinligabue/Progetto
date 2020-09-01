@@ -2,7 +2,7 @@ package mp.progetto;
 
 import java.util.ArrayList;
 
-public class User {
+public class User extends Streams {
 
 	private String id;
 	private String name;
@@ -32,14 +32,6 @@ public class User {
 			games.add(e);
 		} else
 			throw new IllegalArgumentException("game does not exist: " + game);
-	}
-
-	public boolean containsName(final ArrayList<Game> list, final String gameName) {
-		return list.stream().filter(o -> o.getName().equals(gameName)).findAny().isPresent();
-	}
-
-	public double priceOfGame(final ArrayList<Game> list, final String gameName) {
-		return list.stream().filter(o -> o.getName().equals(gameName)).findAny().get().price;
 	}
 
 	private User(UserBuilder builder) {

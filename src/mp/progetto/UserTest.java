@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UserTest {
+public class UserTest extends Streams {
 	private static Shop shop;
 
 	@Before
-	public void setup() {
+	public void setup()  {
 		shop = new Shop();
 		shop.addDefaultGames(shop);
 	}
 
 	@Test
 	public void testValuesAreAssigned() {
-		Game game1 = new Game("Spider", 0);
+		Game game1 = new Game("Spider", priceOfGame(Shop.getGameList(), "Spider"));
 		// setup
 		User primoUtente = new User.UserBuilder("john88", "John Wick").withAge(20).setGames(game1, Shop.getGameList())
 				.build();
@@ -32,8 +32,8 @@ public class UserTest {
 	public void testAddGames() {
 		// setup
 		ArrayList<Game> list = new ArrayList<Game>();
-		list.add(new Game("Klondike", 0.0));
-		list.add(new Game("Spider", 10.0));
+		list.add(new Game("Klondike", priceOfGame(Shop.getGameList(), "Klondike")));
+		list.add(new Game("Spider", priceOfGame(Shop.getGameList(), "Spider")));
 		User primoUtente = new User.UserBuilder("john88", "John").setGames(list, Shop.getGameList()).build();
 
 		primoUtente.addGame("Freecell", Shop.getGameList());
@@ -47,8 +47,8 @@ public class UserTest {
 	public void testAddFakeGames() {
 		// setup
 		ArrayList<Game> list = new ArrayList<Game>();
-		list.add(new Game("Klondike", 0.0));
-		list.add(new Game("Spider", 0.0));
+		list.add(new Game("Klondike", priceOfGame(Shop.getGameList(), "Klondike")));
+		list.add(new Game("Spider", priceOfGame(Shop.getGameList(), "Spider")));
 		User primoUtente = new User.UserBuilder("john88", "John").setGames(list, Shop.getGameList()).build();
 		// verify
 		assertThatExceptionOfType(IllegalArgumentException.class)
