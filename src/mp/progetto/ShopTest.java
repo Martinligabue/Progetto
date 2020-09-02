@@ -10,7 +10,12 @@ public class ShopTest extends Streams {
 	@Before
 	public void setup() {
 		shop = new Shop(DiscountStrategyFactoryLambda.noDiscount());
-		shop.addDefaultGames(shop);
+		shop.addDefaultGames();
+	}
+
+	@After
+	public void clean() {
+		shop.clean();
 	}
 
 	@Test
@@ -38,9 +43,9 @@ public class ShopTest extends Streams {
 
 	@Test
 	public void testUser() {
-		Game game1 = new Game("Spider", priceOfGame(Shop.getGameList(), "Spider"));
-		User primoUtente = new User.UserBuilder("john88", "John Wick").withFriends(3).setGames(game1, Shop.getGameList())
-				.build();
+		Game game1 = new Game("Spider", priceOfGame(shop.getGameList(), "Spider"));
+		User primoUtente = new User.UserBuilder("john88", "John Wick").withFriends(3)
+				.setGames(game1, shop.getGameList()).build();
 		shop.setDiscountStrategy(DiscountStrategyFactoryLambda.friendDiscount(primoUtente.getFriends()));
 		assertEquals(7, shop.getTotal(primoUtente.getExactGame("Spider").price), 0);
 	}

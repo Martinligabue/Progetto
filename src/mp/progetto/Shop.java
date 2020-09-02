@@ -9,15 +9,19 @@ public class Shop extends Streams {// todo:add the default prices as default, al
 	public void addGame(String name, double d) {
 		gameList.add(new Game(name, d));
 	}
-
-	public void addDefaultGames(Shop shopGames) {
-		shopGames.addGame("Klondike", 0);
-		shopGames.addGame("Spider", 10);
-		shopGames.addGame("Freecell", 50);
-		shopGames.addGame("Tripeaks", 15.5);
+	
+	public void clean() {
+		gameList.removeAll(gameList);
 	}
 
-	public final static ArrayList<Game> getGameList() {
+	public void addDefaultGames() {
+		this.addGame("Klondike", 0);
+		this.addGame("Spider", 10);
+		this.addGame("Freecell", 50);
+		this.addGame("Tripeaks", 15.5);
+	}
+
+	public final ArrayList<Game> getGameList() {
 		return gameList;
 	}
 /*

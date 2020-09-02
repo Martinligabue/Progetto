@@ -21,7 +21,7 @@ public class User extends Streams {
 	public int getAge() {
 		return age;
 	}
-	
+
 	public int getFriends() {
 		return friends;
 	}
@@ -29,8 +29,9 @@ public class User extends Streams {
 	public ArrayList<Game> getGames() {
 		return games;
 	}
+
 	public Game getExactGame(String gameName) {
-		return games.stream().filter(o->o.name==gameName).findAny().get();
+		return games.stream().filter(o -> o.name == gameName).findAny().get();
 	}
 
 	public void addGame(String game, ArrayList<Game> shopGames) {
@@ -56,7 +57,7 @@ public class User extends Streams {
 		private String name;
 		private int age;
 		private int friends;
-		private ArrayList<Game> games=new ArrayList<Game>();
+		private ArrayList<Game> games = new ArrayList<Game>();
 
 		public UserBuilder(String id, String name) {
 			this.id = id;
@@ -67,19 +68,18 @@ public class User extends Streams {
 			this.age = age;
 			return this;
 		}
-		
+
 		public UserBuilder withFriends(int friends) {
 			this.friends = friends;
 			return this;
 		}
 
 		public UserBuilder setGames(ArrayList<Game> games, ArrayList<Game> shopGames) {
-			/*Game var = null;
+
 			while (games.iterator().hasNext())
-				var=games.iterator().next();
-				if (!containsName(shopGames, var.name))
+				if (!containsName(shopGames, games.iterator().next().name))
 					throw new IllegalArgumentException("game does not exist");
-*/
+
 			this.games = games;
 
 			return this;
@@ -88,7 +88,7 @@ public class User extends Streams {
 
 		public UserBuilder setGames(Game game, ArrayList<Game> shopGames) {
 			if (!containsName(shopGames, game.name)) {
-				throw new IllegalArgumentException("game does not exist: " + game);
+				throw new IllegalArgumentException("game does not exist: " + game.name);
 
 			} else {
 				games.add(game);
