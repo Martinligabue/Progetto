@@ -8,7 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UserTest extends Streams {
+public class UserTest extends Streams {//aggiungere singolo gioco? aggiungere lista personalizzata?
 	private static Shop shop;
 
 	@Before
@@ -34,7 +34,7 @@ public class UserTest extends Streams {
 		assertThat(primoUtente.getGames().contains(game1));
 	}
 
-	/*@Test
+	@Test
 	public void testAddGames() {
 		// setup
 		ArrayList<Game> list = new ArrayList<Game>();
@@ -47,7 +47,7 @@ public class UserTest extends Streams {
 		assertThat(primoUtente.containsName(primoUtente.getGames(), "Spider"));
 		assertThat(primoUtente.containsName(primoUtente.getGames(), "Freecell"));
 		assertThat(!primoUtente.containsName(primoUtente.getGames(), "Pyramid"));
-	}*/
+	}
 
 	@Test
 	public void testAddFakeGames() {

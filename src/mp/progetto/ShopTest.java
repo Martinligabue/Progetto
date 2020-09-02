@@ -24,19 +24,11 @@ public class ShopTest extends Streams {
 	}
 
 	@Test
-	public void testAbsoluteDiscountStrategy() {
+	public void testDiscountStrategy() {
 		shop.setDiscountStrategy(DiscountStrategyFactoryLambda.coupon(3));
 		assertEquals(7, shop.getTotal(10), 0);
-	}
-
-	@Test
-	public void testPercentageDiscountStrategy() {
 		shop.setDiscountStrategy(DiscountStrategyFactoryLambda.summerSale());
 		assertEquals(80, shop.getTotal(100), 0);
-	}
-
-	@Test
-	public void testFriendDiscountStrategy() {
 		shop.setDiscountStrategy(DiscountStrategyFactoryLambda.friendDiscount(3));
 		assertEquals(70, shop.getTotal(100), 0);
 	}

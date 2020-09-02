@@ -51,7 +51,7 @@ public class User extends Streams {
 		this.games = builder.games;
 	}
 
-	public static class UserBuilder {
+	public static class UserBuilder extends Streams {
 
 		private String id;
 		private String name;
@@ -75,11 +75,11 @@ public class User extends Streams {
 		}
 
 		public UserBuilder setGames(ArrayList<Game> games, ArrayList<Game> shopGames) {
-
-			while (games.iterator().hasNext())
-				if (!containsName(shopGames, games.iterator().next().name))
-					throw new IllegalArgumentException("game does not exist");
-
+			/*
+			 * while (games.iterator().hasNext()) if (!containsName(shopGames,
+			 * games.iterator().next().name)) throw new
+			 * IllegalArgumentException("game does not exist");
+			 */
 			this.games = games;
 
 			return this;
@@ -101,13 +101,6 @@ public class User extends Streams {
 			return new User(this);
 		}
 
-		public boolean containsName(final ArrayList<Game> list, final String gameName) {
-			return list.stream().filter(o -> o.getName().equals(gameName)).findAny().isPresent();
-		}
-
-		public double priceOfGame(final ArrayList<Game> list, final String gameName) {
-			return list.stream().filter(o -> o.getName().equals(gameName)).findAny().get().price;
-		}
 	}
 
 }

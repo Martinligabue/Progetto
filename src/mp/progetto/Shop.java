@@ -9,7 +9,7 @@ public class Shop extends Streams {// todo:add the default prices as default, al
 	public void addGame(String name, double d) {
 		gameList.add(new Game(name, d));
 	}
-	
+
 	public void clean() {
 		gameList.removeAll(gameList);
 	}
@@ -24,12 +24,7 @@ public class Shop extends Streams {// todo:add the default prices as default, al
 	public final ArrayList<Game> getGameList() {
 		return gameList;
 	}
-/*
-	public boolean containsName(final ArrayList<Game> list, final String gameName) {
-		return list.stream().filter(o -> o.getName().equals(gameName)).findFirst().isPresent();
-	}
-*/
-	
+
 ////////////
 
 	private DiscountStrategy discountStrategy;
