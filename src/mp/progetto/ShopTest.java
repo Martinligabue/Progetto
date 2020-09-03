@@ -34,9 +34,14 @@ public class ShopTest extends Streams {
 	}
 
 	@Test
-	public void testUser() {
-		Game game1 = new Game("Spider", priceOfGame(shop.getGameList(), "Spider"));
-		User primoUtente = new User.UserBuilder("john88", "John Wick").withFriends(3)
+	public void testDiscountOnUser() {//solo con variabili
+		String gameNameString="Spider";
+		String usernameString="john88";
+		String nameString="John Wick";
+		int friendsInt=3;
+		
+		Game game1 = new Game(gameNameString, priceOfGame(shop.getGameList(), gameNameString));
+		User primoUtente = new User.UserBuilder(usernameString, nameString).withFriends(friendsInt)
 				.setGames(game1, shop.getGameList()).build();
 		shop.setDiscountStrategy(DiscountStrategyFactoryLambda.friendDiscount(primoUtente.getFriends()));
 		assertEquals(7, shop.getTotal(primoUtente.getExactGame("Spider").price), 0);
