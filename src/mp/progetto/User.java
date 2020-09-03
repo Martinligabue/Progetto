@@ -11,7 +11,7 @@ public class User extends Streams {
 	private int friends;
 	private ArrayList<Game> games;
 
-	public String getId() {// must be different
+	public String getId() {
 		return id;
 	}
 
