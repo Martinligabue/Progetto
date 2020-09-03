@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="mp.progetto.User" project="progetto.mp.martin.ligabue" 
     file="/progetto.mp.martin.ligabue/src/mp/progetto/User.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="297" width="219" x="82" y="66"/>    
+    <position height="-1" width="-1" x="106" y="203"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="mp.progetto.User.UserBuilder" project="progetto.mp.martin.ligabue" 
     file="/progetto.mp.martin.ligabue/src/mp/progetto/User.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="485" y="271"/>    
+    <position height="-1" width="-1" x="468" y="294"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="mp.progetto.Game" project="progetto.mp.martin.ligabue" 
     file="/progetto.mp.martin.ligabue/src/mp/progetto/Game.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="487" y="513"/>    
+    <position height="-1" width="-1" x="449" y="598"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="mp.progetto.Shop" project="progetto.mp.martin.ligabue" 
     file="/progetto.mp.martin.ligabue/src/mp/progetto/Shop.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="810" y="218"/>    
+    <position height="-1" width="-1" x="809" y="308"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="mp.progetto.Streams" project="progetto.mp.martin.ligabue" 
     file="/progetto.mp.martin.ligabue/src/mp/progetto/Streams.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="498" y="60"/>    
+    <position height="-1" width="-1" x="448" y="27"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="mp.progetto.UserTest" project="progetto.mp.martin.ligabue" 
     file="/progetto.mp.martin.ligabue/src/mp/progetto/UserTest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="790" y="22"/>    
+    <position height="-1" width="-1" x="927" y="-87"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="mp.progetto.ShopTest" project="progetto.mp.martin.ligabue" 
     file="/progetto.mp.martin.ligabue/src/mp/progetto/ShopTest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="158" x="724" y="362"/>    
+    <position height="-1" width="-1" x="729" y="77"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -67,7 +67,7 @@
   <class id="8" language="java" name="mp.progetto.DiscountStrategyFactoryLambda" project="progetto.mp.martin.ligabue" 
     file="/progetto.mp.martin.ligabue/src/mp/progetto/DiscountStrategyFactoryLambda.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="95" y="491"/>    
+    <position height="-1" width="-1" x="650" y="628"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -76,7 +76,7 @@
   </class>  
   <interface id="9" language="java" name="mp.progetto.DiscountStrategy" project="progetto.mp.martin.ligabue" 
     file="/progetto.mp.martin.ligabue/src/mp/progetto/DiscountStrategy.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="314" y="538"/>    
+    <position height="-1" width="-1" x="871" y="538"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,75 +84,99 @@
     </display>  
   </interface>  
   <association id="10">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="11" name="games">        
+        <position height="0" width="0" x="-38" y="85"/>      
+      </attribute>      
+      <multiplicity id="12" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-38" y="85"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="13">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="14" name="shop">        
+        <position height="0" width="0" x="-1" y="90"/>      
+      </attribute>      
+      <multiplicity id="15" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-1" y="90"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="16">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="17">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="11" name="discountStrategy"/>      
-      <multiplicity id="12" minimum="0" maximum="1"/>    
+      <attribute id="18" name="discountStrategy">        
+        <position height="0" width="0" x="557" y="0"/>      
+      </attribute>      
+      <multiplicity id="19" minimum="0" maximum="1">        
+        <position height="0" width="0" x="557" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="13">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="14" name="shop"/>      
-      <multiplicity id="15" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="16">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="17" name="games"/>      
-      <multiplicity id="18" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="19">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="20" name="shop"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="22">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="23" name="games"/>      
-      <multiplicity id="24" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="25">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="26">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="27">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="28">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <nesting id="29">    
+  <nesting id="20">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="2"/>  
   </nesting>  
-  <association id="30">    
+  <association id="21">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="22" name="shop">        
+        <position height="0" width="0" x="-1" y="90"/>      
+      </attribute>      
+      <multiplicity id="23" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-1" y="90"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="25">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="26">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="31" name="gameList"/>      
-      <multiplicity id="32" minimum="0" maximum="2147483647"/>    
+      <attribute id="27" name="gameList">        
+        <position height="0" width="0" x="-38" y="85"/>      
+      </attribute>      
+      <multiplicity id="28" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-38" y="85"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="30" name="games">        
+        <position height="0" width="0" x="-38" y="85"/>      
+      </attribute>      
+      <multiplicity id="31" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-38" y="85"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
   <generalization id="33">    
-    <end type="SOURCE" refId="1"/>    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
