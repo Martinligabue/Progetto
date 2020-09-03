@@ -1,6 +1,7 @@
 package mp.progetto;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class User extends Streams {
 
@@ -75,25 +76,23 @@ public class User extends Streams {
 		}
 
 		public UserBuilder setGames(ArrayList<Game> games, ArrayList<Game> shopGames) {
-			/*
-			 * while (games.iterator().hasNext()) if (!containsName(shopGames,
-			 * games.iterator().next().name)) throw new
-			 * IllegalArgumentException("game does not exist");
-			 */
-			this.games = games;
+			Iterator<Game> i = games.iterator();
 
+			while (i.hasNext())
+				if (!containsName(shopGames, i.next().getName()))
+					throw new IllegalArgumentException("game does not exist");
+
+			this.games = games;
 			return this;
 
 		}
 
 		public UserBuilder setGames(Game game, ArrayList<Game> shopGames) {
-			if (!containsName(shopGames, game.name)) {
+			if (!containsName(shopGames, game.name))
 				throw new IllegalArgumentException("game does not exist: " + game.name);
 
-			} else {
-				games.add(game);
-				return this;
-			}
+			games.add(game);
+			return this;
 
 		}
 
