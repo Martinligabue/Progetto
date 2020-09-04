@@ -2,7 +2,7 @@ package mp.progetto;
 
 import java.util.ArrayList;
 
-public class Shop extends Streams {// todo:add the default prices as default, also map?
+public class Shop extends Streams {
 
 	private static ArrayList<Game> gameList = new ArrayList<>();
 
@@ -24,8 +24,6 @@ public class Shop extends Streams {// todo:add the default prices as default, al
 	public final ArrayList<Game> getGameList() {
 		return gameList;
 	}
-
-////////////
 
 	private DiscountStrategy discountStrategy;
 
